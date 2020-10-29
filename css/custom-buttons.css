@@ -1,0 +1,129 @@
+:root {
+    --checkbox-radio-size: 18px;
+    --checkbox-radio-gap: var(--space-xxxs);
+    --checkbox-radio-border-width: 2px;
+    --checkbox-radio-line-height: var(--body-line-height);
+    --radio-marker-size: 8px;
+    --checkbox-marker-size: 12px;
+    --checkbox-radius: 4px;
+    --color-primary: #0F8FF7;
+  }
+  
+  .radio,
+  .checkbox {
+    position: absolute;
+    margin: 0 !important;
+    padding: 0 !important;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    pointer-events: none;
+  }
+  
+  .radio + label,
+  .checkbox + label {
+    display: inline-flex;
+    align-items: flex-start;
+    line-height: var(--checkbox-radio-line-height);
+    user-select: none;
+    cursor: pointer;
+  }
+  
+  .radio + label::before,
+  .checkbox + label::before {
+    content: '';
+    display: inline-block;
+    position: relative;
+    top: calc((1em * var(--checkbox-radio-line-height) - var(--checkbox-radio-size)) / 2);
+    flex-shrink: 0;
+    width: var(--checkbox-radio-size);
+    height: var(--checkbox-radio-size);
+    background-color: var(--color-bg);
+    border-width: var(--checkbox-radio-border-width);
+    border-color: var(--color-contrast-low);
+    border-style: solid;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: var(--checkbox-radio-gap);
+    transition: transform .2s, border .2s;
+    margin: 3px 5px 0px 0px;
+  }
+  
+  .radio:not(:checked):not(:focus) + label:hover::before,
+  .checkbox:not(:checked):not(:focus) + label:hover::before {
+    border-color: hsl(var(--color-contrast-low-h), var(--color-contrast-low-s), calc(var(--color-contrast-low-l) * 0.7));
+  }
+  
+  .radio + label::before {
+    border-radius: 50%;
+  }
+  
+  .checkbox + label::before {
+    border-radius: var(--checkbox-radius);
+  }
+  
+  .radio:checked + label::before,
+  .checkbox:checked + label::before {
+    background-color: var(--color-primary);
+    box-shadow: none;
+    border-color: var(--color-primary);
+    transition: transform .2s;
+  }
+  .radio:checked + label.bg-transparent::before,
+  .checkbox:checked + label.bg-transparent::before {
+    background-color: transparent !important;
+    border-color: #fff;
+  }
+  .radio:active + label::before,
+  .checkbox:active + label::before {
+    transform: scale(0.8);
+    transition: transform .2s;
+  }
+  
+  .radio:checked:active + label::before,
+  .checkbox:checked:active + label::before {
+    transform: none;
+    transition: none;
+  }
+  
+  .radio:checked + label::before {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg class='nc-icon-wrapper' fill='%23ffffff'%3E%3Ccircle cx='8' cy='8' r='8' fill='%23ffffff'%3E%3C/circle%3E%3C/g%3E%3C/svg%3E");
+    background-size: var(--radio-marker-size);
+  }
+  
+  .checkbox:checked + label::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpolyline points='1 6.5 4 9.5 11 2.5' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/svg%3E");
+    background-size: var(--checkbox-marker-size);
+  }
+  
+  .radio:checked:active + label::before,
+  .checkbox:checked:active + label::before,
+  .radio:focus + label::before,
+  .checkbox:focus + label::before {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.2);
+  }
+  .radio:checked:active + label.bg-transparent::before,
+  .checkbox:checked:active + label.bg-transparent::before,
+  .radio:focus + label.bg-transparent::before,
+  .checkbox:focus + label.bg-transparent::before {
+    border-color: #fff;
+  }
+  
+  
+  .radio--bg + label, .checkbox--bg + label {
+    padding: var(--space-xxxxs) var(--space-xxxs);
+    border-radius: var(--radius-md);
+    transition: background .2s;
+  }
+  
+  .radio--bg + label:hover, .checkbox--bg + label:hover {
+    background-color: var(--color-contrast-lower);
+  }
+  
+  .radio--bg:active + label,
+  .checkbox--bg:active + label,
+  .radio--bg:focus + label,
+  .checkbox--bg:focus + label {
+    background-color: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.1);
+  }
