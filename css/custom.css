@@ -115,6 +115,12 @@ article.d-flex img.our-team-list {
     overflow: hidden;
 }
 
+.contact-us-bg-pen {
+    left: 75%;
+    /* overflow: hidden; */
+    position: relative;
+}
+
 .news-insight-carousel.owl-carousel .owl-stage {
     display: flex;
 }
@@ -666,6 +672,13 @@ div.nav-bottom-line-effect-10 div:hover > a:before {
  }
 
 /* // Medium devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) { 
+    .image-aligned-portion.left-img
+    {
+      left: -40%;
+      transform: matrix(1.5, 0, 0, 1.5, 5, -50) !important;
+    }
+}
 @media only screen and (max-width: 768px) { 
     .scale-sm-1 {
         -webkit-transform: scale(1.1) !important;
@@ -712,18 +725,30 @@ div.nav-bottom-line-effect-10 div:hover > a:before {
     .about-us-bg-briefcase {
         background-image: none;
     }
+
+    .image-aligned-portion
+  {
+    /* position: relative; */
+    top: 0% !important;
+    transform: none !important;
+  }
  }
 
 /* // Large devices (desktops, 992px and up) */
 @media only screen and (min-width: 992px) { 
-    .border-right-5x
+    .border-right-15x
     {
-        border-right: solid 5px #fff;
+        border-right: solid 15px #fff;
     }
-    .border-left-5x
+    .border-left-15x
     {
-        border-left: solid 5px #fff;
+        border-left: solid 15px #fff;
     }
+    .image-aligned-portion.left-img
+  {
+    left: -40%;
+    transform: matrix(1.5, 0, 0, 1.5, 5, -50) !important;
+  }
 }
 @media only screen and (max-width: 992px) { 
     .scale-md-1 {
@@ -777,6 +802,8 @@ div.nav-bottom-line-effect-10 div:hover > a:before {
         top: 50%;
     }
 
+    
+
  }
 
 /* // Extra large devices (large desktops, 1200px and up) */
@@ -810,6 +837,12 @@ div.nav-bottom-line-effect-10 div:hover > a:before {
         -webkit-transform: scale(1.6) !important;
         transform: scale(1.6) !important;
     }
+
+    .image-aligned-portion.left-img
+  {
+    left: -40%;
+    transform: matrix(1.5, 0, 0, 1.5, 5, -50) !important;
+  }
 }
 @media only screen and (max-width: 1200px) { 
     .scale-lg-1 {
@@ -846,6 +879,15 @@ div.nav-bottom-line-effect-10 div:hover > a:before {
         border: none !important;
     }
  }
+/* // 
+Extra large devices (large desktops, 1400px and up) */
+@media only screen and (min-width: 1400px) {
+ .image-aligned-portion.left-img
+  {
+    left: -50%;
+    transform: matrix(1.8, 0, 0, 1.8, 5, -50) !important;
+  }
+}
 
  .menu-text-aligned {
     -webkit-box-orient: vertical;
@@ -899,6 +941,11 @@ div.nav-bottom-line-effect-10 div:hover > a:before {
     color: #fff !important;
   }
 
+  .conversation-form select:focus option:not(:disabled)
+  {
+    color: #333333 !important;
+  }
+
   .conversation-form input[type=text].placeholder-color-light { /* Internet Explorer 10-11 */
     color: #fff !important;
   }
@@ -907,3 +954,36 @@ div.nav-bottom-line-effect-10 div:hover > a:before {
   }
 
   /* #endregion ContactUsForm */
+
+  .image-aligned-portion
+  {
+    position: relative;
+    top: 40%;
+  }
+
+  .btn-schedule-demo
+  {
+    z-index: 10;
+    position: fixed !important;
+    top: 170px !important;
+  }
+
+  .solution-infobox-image-right
+  {
+    position: absolute;
+    top: 50%;
+    transform: translate(0px, -50%);
+    right: 0px;
+  }
+  .solution-infobox-image-left
+  {
+    position: absolute;
+    top: 50%;
+    transform: translate(-15%, -50%);
+    left: 0;
+  }
+
+  .text-color-light-primary
+  {
+      color: #00D5FF !important;
+  }

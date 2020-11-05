@@ -15053,6 +15053,64 @@ section.timeline .timeline-box .owl-carousel {
 .toggle.toggle-simple .toggle.active>label:before {
     content: "\f068";
 }
+/* #region ProductSolutionsToggleBoxes */
+.toggle.plus-minus .toggle.active>label {
+    border-bottom: solid 0.5px #ccc;
+}
+
+.toggle.plus-minus .toggle>label:before {
+    border: 0;
+    right: 34px;
+    left: auto;
+    margin-top: 0;
+    top: 12px;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: "\f067";
+    z-index: 2;
+    color: #0F8FF7;
+    font-size: 13px;
+    width: auto;
+    height: auto;
+    -webkit-transform: none;
+    transform: none;
+}
+
+.toggle.plus-minus .toggle.active>label:before {
+    content: "\f068";
+}
+
+
+.toggle.plus-minus .toggle>label:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: #CCC;
+    top: 25px;
+    margin-top: -12px;
+    border-radius: 3px;
+    z-index: 1;
+}
+
+.toggle.plus-minus .toggle>label {
+    border-radius: 0;
+    border: 0;
+    background: transparent;
+    color: #777;
+    padding-left: 32px;
+    margin-bottom: 0px;
+    font-size: 1em;
+    font-weight: 600;
+    color: #212529;
+}
+
+html .toggle.plus-minus .toggle>label:after {
+    background-color: transparent;
+}
+/* #endregion ProductSolutionsToggleBoxes */
 
 .toggle.toggle-simple.plus-minus .toggle.active>label {
     border-bottom: solid 0.5px #ccc;
