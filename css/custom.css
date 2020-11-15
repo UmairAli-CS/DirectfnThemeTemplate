@@ -23,8 +23,8 @@ ul.footer-bottom-content>li {
     display: inline-block;
     margin: -1px 1px 0 0;
     padding: 0;
-    border-radius: 100%;
-    overflow: visible;
+    /* border-radius: 100%; Changed by Developer */
+    overflow: visible !important;
     vertical-align: top;
 }
 
@@ -570,6 +570,13 @@ button.collapse-menu-icon-plus {
     transition: cubic-bezier(0.55, 0, 0.1, 1) right 300ms;
     right: 100%;
 }
+ul.nav-bottom-line-effect-10 > li > a
+{
+    position: relative;
+}
+ul.nav-bottom-line-effect-10 > li > a:before,
+ul.nav-bottom-line-effect-10 > li:hover > a:before,
+
 div.nav-bottom-line-effect-10 > div > a:before, 
 div.nav-bottom-line-effect-10 > div:hover > a:before {
     left: 0;
@@ -578,6 +585,9 @@ div.nav-bottom-line-effect-10 > div:hover > a:before {
     margin: 6px 0px 15px 0px;
     opacity: 1 !important;
 }
+
+ul.nav-bottom-line-effect-10 > li > a:before,
+ul.nav-bottom-line-effect-10 > li:hover > a:before,
 
 div.nav-bottom-line-effect-10 > div > a:before,
 div.nav-bottom-line-effect-10 > div:hover > a:before {
@@ -592,11 +602,35 @@ div.nav-bottom-line-effect-10 > div:hover > a:before {
     -webkit-transform: translate3d(0, -50%, 0);
     transform: translate3d(0, -50%, 0);
 }
+
+ul.nav-bottom-line-effect-10.absolute-top > li > a:before,
+ul.nav-bottom-line-effect-10 > li:hover > a:before
+{
+    top: 75% !important;
+}
+
+.bg-gradient-primary-dark ul.nav-bottom-line-effect-10 li:hover > a:before,
+.bg-gradient-primary-darkest ul.nav-bottom-line-effect-10 li:hover > a:before {
+    background: #efefef !important;
+}
+
+ul.nav-bottom-line-effect-10 li:hover > a:before {
+        background: #0088CC;
+    }
+
+    ul.nav-bottom-line-effect-10 > li > a:before {
+        -webkit-transition: cubic-bezier(0.55, 0, 0.1, 1) right 300ms;
+        transition: cubic-bezier(0.55, 0, 0.1, 1) right 300ms;
+        right: 100%;
+    }
 @media (min-width: 786px)
 {
+    
     div.nav-bottom-line-effect-10 div:hover > a:before {
         background: #0088CC;
     }
+
+    
     div.nav-bottom-line-effect-10 > div > a:before {
         -webkit-transition: cubic-bezier(0.55, 0, 0.1, 1) right 300ms;
         transition: cubic-bezier(0.55, 0, 0.1, 1) right 300ms;
@@ -604,18 +638,22 @@ div.nav-bottom-line-effect-10 > div:hover > a:before {
     }
 }
 
+ul.nav-bottom-line-effect-10 li > a.active:before,
 div.nav-bottom-line-effect-10 div > a.active:before {
     right: 15px;
 }
 
+ul.nav-bottom-line-effect-10 li:hover > a:before,
 div.nav-bottom-line-effect-10 div:hover > a:before {
     right: 15px;
 }
 
+ul.nav-bottom-line-effect-10 li > a.active:before,
 div.nav-bottom-line-effect-10 div > a.active:before {
     right: 0;
 }
 
+ul.nav-bottom-line-effect-10 li:hover > a:before,
 div.nav-bottom-line-effect-10 div:hover > a:before {
     right: 0;
 }
@@ -673,11 +711,7 @@ div.nav-bottom-line-effect-10 div:hover > a:before {
 
 /* // Medium devices (tablets, 768px and up) */
 @media only screen and (min-width: 768px) { 
-    .image-aligned-portion.left-img
-    {
-      left: -40%;
-      transform: matrix(1.5, 0, 0, 1.5, 5, -50) !important;
-    }
+    
 }
 @media only screen and (max-width: 768px) { 
     .scale-sm-1 {
@@ -726,12 +760,6 @@ div.nav-bottom-line-effect-10 div:hover > a:before {
         background-image: none;
     }
 
-    .image-aligned-portion
-  {
-    /* position: relative; */
-    top: 0% !important;
-    transform: none !important;
-  }
  }
 
 /* // Large devices (desktops, 992px and up) */
@@ -746,8 +774,7 @@ div.nav-bottom-line-effect-10 div:hover > a:before {
     }
     .image-aligned-portion.left-img
   {
-    left: -40%;
-    transform: matrix(1.5, 0, 0, 1.5, 5, -50) !important;
+    transform: translate(-10%,-50%);
   }
 }
 @media only screen and (max-width: 992px) { 
@@ -840,8 +867,19 @@ div.nav-bottom-line-effect-10 div:hover > a:before {
 
     .image-aligned-portion.left-img
   {
-    left: -40%;
-    transform: matrix(1.5, 0, 0, 1.5, 5, -50) !important;
+    transform: translate(-10%,-50%);
+  }
+  .feature-banner-flex
+  {
+    min-height: 360px;
+  }
+  .feature-banner-flex-text
+  {
+    min-height: 440px;
+  }
+  .feature-banner-flex-laptop
+  {
+    min-height: 490px;
   }
 }
 @media only screen and (max-width: 1200px) { 
@@ -879,15 +917,10 @@ div.nav-bottom-line-effect-10 div:hover > a:before {
         border: none !important;
     }
  }
-/* // 
-Extra large devices (large desktops, 1400px and up) */
+/* Extra large devices (large desktops, 1400px and up) */
 @media only screen and (min-width: 1400px) {
- .image-aligned-portion.left-img
-  {
-    left: -50%;
-    transform: matrix(1.8, 0, 0, 1.8, 5, -50) !important;
-  }
-}
+ 
+} 
 
  .menu-text-aligned {
     -webkit-box-orient: vertical;
@@ -957,8 +990,8 @@ Extra large devices (large desktops, 1400px and up) */
 
   .image-aligned-portion
   {
-    position: relative;
-    top: 40%;
+    position: absolute;
+    top: 50%;
   }
 
   .btn-schedule-demo
@@ -975,15 +1008,29 @@ Extra large devices (large desktops, 1400px and up) */
     transform: translate(0px, -50%);
     right: 0px;
   }
-  .solution-infobox-image-left
-  {
-    position: absolute;
-    top: 50%;
-    transform: translate(-15%, -50%);
-    left: 0;
-  }
 
   .text-color-light-primary
   {
       color: #00D5FF !important;
+  }
+  .bg-color-primary-transparent
+  {
+    background-color: #0690F2 !important;
+  }
+
+  .toggleFadeIn
+  {
+    opacity: 1;
+    animation: fadeIn 1s linear;
+    visibility: visible;
+    animation-fill-mode: forwards;
+    height: auto;
+  }
+  .toggleFadeOut
+  {
+    opacity: 0;
+    animation: fadeOut 1s linear;
+    visibility: hidden;
+    animation-fill-mode: forwards;
+    height: 0;
   }
